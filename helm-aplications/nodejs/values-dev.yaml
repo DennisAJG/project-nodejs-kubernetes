@@ -1,0 +1,33 @@
+replicaCount: 1
+
+appPort: 3000
+
+image:
+  registry: harbor.localhost.com/project-liferay/project-liferay
+  tag: latest
+
+environmentVariables:
+  - name: MYSQL_DATABASE
+    value: test
+  - name: MYSQL_HOST
+    value: mariadb.api.svc.cluster.local
+  - name: MYSQL_USER
+    value: test
+  - name: MYSQL_PASSWORD
+    value: test
+
+livenessProbe: {}
+
+readinessProbe: {}
+
+ingress:
+  enabled: true
+
+mariadb:
+  auth:
+    usernames:
+      - test
+    passwords:
+      - test
+    databases:
+      - test

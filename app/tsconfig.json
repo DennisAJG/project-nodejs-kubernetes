@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+      "baseUrl": "./",
+      "paths": {
+        "*": ["node_modules/*"]
+      },
+      "target": "ES2020",
+      "module": "CommonJS", // Para uso com TypeORM CLI
+      "moduleResolution": "node",
+      "outDir": "./dist", // Diretório de saída da compilação
+      "rootDir": "./src", // Diretório raiz do projeto
+      "strict": true, // Ativa verificações estritas
+      "esModuleInterop": true, // Permite importar módulos ES
+      "skipLibCheck": true, // Ignora verificações de tipo nas bibliotecas
+      "experimentalDecorators": true, // Habilita decoradores (necessário para TypeORM)
+      "emitDecoratorMetadata": true, // Emite metadados para decoradores
+      "strictPropertyInitialization": false // Desabilita verificação de inicialização em propriedades
+    },
+    "include": ["src/**/*", "tests/**/*"], // Inclui arquivos de origem e testes
+    "exclude": ["node_modules", "dist"], // Exclui arquivos desnecessários
+    "types": ["node", "jest"] // Adiciona tipos do Node.js e Jest
+  }

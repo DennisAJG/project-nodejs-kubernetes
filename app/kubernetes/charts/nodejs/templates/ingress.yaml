@@ -1,0 +1,19 @@
+{{ if .Values.ingress.enabled }}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "tmf635-usage.fullname" . }}
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: app.localhost.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: {{ include "tmf635-usage.fullname" . }}
+            port:
+              number: {{ .Values.appPort | default 3000 }}
+{{ end }}

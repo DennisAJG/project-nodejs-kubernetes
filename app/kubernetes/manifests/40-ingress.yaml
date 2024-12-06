@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app-liferay-ingress
+  namespace: api
+spec:
+  ingressClassName: nginx  # Adicione essa linha para definir a classe como nginx
+  rules:
+  - host: appliferay.localhost.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: app-liferay
+            port:
+              number: 3000

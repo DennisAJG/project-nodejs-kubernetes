@@ -1,0 +1,5 @@
+app/node_modules/
+
+infra-kind/.terraform/
+infra-kind/.terraform.lock.hcl
+
